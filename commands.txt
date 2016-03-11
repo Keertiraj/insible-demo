@@ -1,0 +1,22 @@
+Login into putty
+
+ansible box: url:192.168.0.254 port:22  credentials: vagrant/vagrant
+
+private key location: /home/vagrant/.ssh/id_rsa
+public key location: /home/vagrant/.ssh/id_rsa.pub  copy this file to .ssh/authorized_keys on hosts
+
+
+webserver box: url:192.168.0.2 port:22  credentials: vagrant/vagrant
+
+Ping all the servers from ansible server:
+
+ansible -i hosts -u root -m ping all
+
+Ansible Commands:
+
+ansible-playbook -i hosts -u root nginx.yml
+
+
+
+ssh-agent bash
+ssh-add .ssh/id_rsa
